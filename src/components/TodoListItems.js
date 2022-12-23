@@ -1,11 +1,12 @@
 import React from "react";
+import TodoListItem from "./TodoListItem";
 
 export default function TodoListItems() {
   return (
     <div>
       <ul>
-        <li>Learn ReactJS</li>
-        <li>Learn NodeJS</li>
+        <TodoListItem content="Learn ReactJS"/>
+        <TodoListItem content="Learn NodeJS"/>
       </ul>
     </div>
   );
