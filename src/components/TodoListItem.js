@@ -5,7 +5,7 @@ export default function TodoListItem(props) {
     <div className="TodoListItem">
       <li>
         <input type="checkbox" checked={props.done} onChange={props.handleClick}/>
-        {props.content}
+        <p>{props.content}</p>
         <button onClick={props.handleDelete}>Delete</button>
       </li>
     </div>
