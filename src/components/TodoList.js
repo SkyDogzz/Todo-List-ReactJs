@@ -33,10 +33,14 @@ export default function TodoList() {
     setLocaleStorage(newItems);
   };
 
+  const deleteTodo = (event) => {
+    console.log(event);
+  }
+
   return (
     <div>
       <TodoListAddForm handleAdd={addTodo} />
-      <TodoListItems items={items} handleClick={toggleTodo} />
+      <TodoListItems items={items} handleClick={toggleTodo} handleDelete={deleteTodo}/>
     </div>
   );
 }

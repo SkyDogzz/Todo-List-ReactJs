@@ -8,6 +8,7 @@ export default function TodoListItems(props) {
       content={item.content}
       done={item.done}
       handleClick={() => props.handleClick(item.id)}
+      handleDelete={() => props.handleDelete(item.id)}
     />
   ));
   return (
