@@ -34,7 +34,9 @@ export default function TodoList() {
   };
 
   const deleteTodo = (event) => {
-    console.log(event);
+    const newItems = items.filter((item) => item.id !== event);
+    setItems(newItems);
+    setLocaleStorage(newItems);
   }
 
   return (
