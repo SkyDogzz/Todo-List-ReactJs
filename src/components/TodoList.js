@@ -54,7 +54,7 @@ export default function TodoList() {
   };
 
   return (
-    <div>
+    <div className="TodoList">
       {errorMessage && <p>{errorMessage}</p>}
       <TodoListAddForm handleAdd={addTodo} />
       <TodoListItems
