@@ -11,7 +11,13 @@ export default function TodoList() {
   const [items, setItems] = useState(itemsData);
 
   const toggleTodo = (id) => {
-    console.log(id)
+    const newItems = items.map((item) => {
+      if (item.id === id) {
+        return { ...item, done: !item.done };
+      }
+      return item;
+    });
+    setItems(newItems);
   }
 
   return (
