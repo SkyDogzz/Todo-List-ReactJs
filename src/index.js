@@ -9,13 +9,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-localStorage.setItem(
-  "itemsData",
-  JSON.stringify([
-    { id: 1, content: "Learn ReactJS", done: true },
-    { id: 2, content: "Learn NodeJS", done: false },
-  ])
-);
-
-console.log(localStorage);

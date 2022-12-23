@@ -7,6 +7,11 @@ export default function TodoList() {
 
   const [items, setItems] = useState(itemsData);
 
+  const setLocaleStorage = (items) => {
+    localStorage.setItem("itemsData", JSON.stringify(items));
+    console.log(localStorage)
+  };
+
   const toggleTodo = (id) => {
     const newItems = items.map((item) => {
       if (item.id === id) {
@@ -15,6 +20,7 @@ export default function TodoList() {
       return item;
     });
     setItems(newItems);
+    setLocaleStorage(newItems);
   };
 
   const addTodo = (event) => {
@@ -24,6 +30,7 @@ export default function TodoList() {
       { id: items.length + 1, content: event.target[0].value, done: false },
     ];
     setItems(newItems);
+    setLocaleStorage(newItems);
   };
 
   return (
