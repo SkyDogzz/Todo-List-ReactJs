@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function TodoListAddForm() {
+export default function TodoListAddForm(props) {
   return (
     <div>
-      <form>
+      <form onSubmit={props.handleAdd}>
         <input type="text" />
         <button type="submit">Ajouter</button>
       </form>

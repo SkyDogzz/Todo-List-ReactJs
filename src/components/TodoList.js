@@ -18,12 +18,21 @@ export default function TodoList() {
       return item;
     });
     setItems(newItems);
-  }
+  };
+
+  const addTodo = (event) => {
+    event.preventDefault();
+    const newItems = [
+      ...items,
+      { id: items.length + 1, content: event.target[0].value, done: false },
+    ];
+    setItems(newItems);
+  };
 
   return (
     <div>
-      <TodoListAddForm />
-      <TodoListItems items={items} handleClick={toggleTodo}/>
+      <TodoListAddForm handleAdd={addTodo} />
+      <TodoListItems items={items} handleClick={toggleTodo} />
     </div>
   );
 }
