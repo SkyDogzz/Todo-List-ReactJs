@@ -1,13 +1,13 @@
 import React from "react";
 import TodoListItem from "./TodoListItem";
 
-export default function TodoListItems() {
+export default function TodoListItems(props) {
+  const items = props.items.map((item) => (
+    <TodoListItem key={item.id} content={item.content} done={item.done} />
+  ));
   return (
     <div>
-      <ul>
-        <TodoListItem content="Learn ReactJS"/>
-        <TodoListItem content="Learn NodeJS"/>
-      </ul>
+      <ul>{items}</ul>
     </div>
   );
 }
