@@ -10,10 +10,14 @@ export default function TodoList() {
 
   const [items, setItems] = useState(itemsData);
 
+  const toggleTodo = (id) => {
+    console.log(id)
+  }
+
   return (
     <div>
       <TodoListAddForm />
-      <TodoListItems items={items} />
+      <TodoListItems items={items} handleClick={toggleTodo}/>
     </div>
   );
 }
