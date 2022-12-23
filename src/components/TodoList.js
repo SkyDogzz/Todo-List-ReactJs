@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { v1 as uuidv1 } from 'uuid';
+import { v1 as uuidv1 } from "uuid";
 
 import TodoListAddForm from "./TodoListAddForm";
 import TodoListItems from "./TodoListItems";
@@ -8,6 +8,7 @@ export default function TodoList() {
   const itemsData = JSON.parse(localStorage.getItem("itemsData"));
 
   const [items, setItems] = useState(itemsData);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const setLocaleStorage = (items) => {
     localStorage.setItem("itemsData", JSON.stringify(items));
@@ -27,6 +28,14 @@ export default function TodoList() {
 
   const addTodo = (event) => {
     event.preventDefault();
+
+    if (!event.target[0].value) {
+      setErrorMessage("Vous ne pouvez pas ajouter une tâche vide");
+      return;
+    }
+
+    setErrorMessage("");
+
     const newItems = [
       ...items,
       { id: uuidv1(), content: event.target[0].value, done: false },
@@ -45,6 +54,7 @@ export default function TodoList() {
 
   return (
     <div>
+      {errorMessage && <p>{errorMessage}</p>}
       <TodoListAddForm handleAdd={addTodo} />
       <TodoListItems
         items={items}
