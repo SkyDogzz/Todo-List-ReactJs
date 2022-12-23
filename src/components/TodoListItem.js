@@ -1,5 +1,12 @@
 import React from "react";
 
 export default function TodoListItem(props) {
-  return <li>{props.content}</li>;
+  return (
+    <div className="TodoListItem">
+      <li>
+        <input type="checkbox" />
+        {props.content}
+      </li>
+    </div>
+  );
 }
