@@ -12,7 +12,7 @@ export default function TodoListItems(props) {
     />
   ));
   return (
-    <div>
+    <div className="TodoListItems">
       <ul>{items}</ul>
     </div>
   );
