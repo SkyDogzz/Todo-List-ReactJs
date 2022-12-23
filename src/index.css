@@ -1,12 +1,108 @@
-.App{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.App {
+  width: 600px;
   align-items: center;
+  background-color: var(--todolist-background-color);
+  padding: 50px;
+  border-radius: 40px;
 }
 
-.TodoListItem p{
-  display: inline;
+.Header {
+  margin-bottom: 40px;
 }
 
+.Header h1 {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+}
+
+.TodoList {
+  background-color: var(--todolist-background-color);
+}
+
+.TodoListAddForm form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.TodoListAddForm input {
+  width: 100%;
+  padding: 10px;
+  margin-right: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.TodoListAddForm button {
+  min-width: 20%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.TodoListAddForm button:hover{
+  background-color: lightgray;
+}
+
+.TodoListItems li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: var(--todolist-item-color);
+}
+
+.TodoListItems button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: var(--todolist-remove-color);
+}
+
+.TodoListItems button:hover {
+  background-color: var(--todolist-remove-hover-color);
+}
+input[type="checkbox"] {
+  margin-left: 15px;
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 4px;
+  appearance: none;
+  outline: 0;
+  cursor: pointer;
+  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+}
+
+input[type="checkbox"]::before {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 0px;
+  left: 5px;
+  width: 8px;
+  height: 14px;
+  border-style: solid;
+  border-color: white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+input[type="checkbox"]:checked {
+  color: white;
+  border-color: green;
+  background: green;
+}
+input[type="checkbox"]:checked::before {
+  opacity: 1;
+}

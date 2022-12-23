@@ -1,5 +1,27 @@
-*, ::before, ::after {
+:root {
+  --background-color: #2274a5;
+  --todolist-background-color: #f75c03;
+  --todolist-item-color: #00cc66;
+  --todolist-remove-color: #f1c40f;
+  --todolist-remove-hover-color: #ddbc3a;
+}
+
+*,
+::before,
+::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+body {
+  background: var(--background-color);
 }
