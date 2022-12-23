@@ -10,9 +10,8 @@ export default function TodoList() {
   const [items, setItems] = useState(itemsData);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const setLocaleStorage = (items) => {
+  const setlocalStorage = (items) => {
     localStorage.setItem("itemsData", JSON.stringify(items));
-    console.log(localStorage);
   };
 
   const toggleTodo = (id) => {
@@ -22,8 +21,8 @@ export default function TodoList() {
       }
       return item;
     });
+    setlocalStorage(newItems);
     setItems(newItems);
-    setLocaleStorage(newItems);
   };
 
   const addTodo = (event) => {
@@ -40,16 +39,18 @@ export default function TodoList() {
       ...items,
       { id: uuidv1(), content: event.target[0].value, done: false },
     ];
+    setlocalStorage(newItems);
     setItems(newItems);
-    setLocaleStorage(newItems);
 
     event.target[0].value = "";
   };
 
   const deleteTodo = (event) => {
     const newItems = items.filter((item) => item.id !== event);
+    setlocalStorage(newItems);
     setItems(newItems);
-    setLocaleStorage(newItems);
+    setlocalStorage(newItems);
+    setItems(newItems);
   };
 
   return (
