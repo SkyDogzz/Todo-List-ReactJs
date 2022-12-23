@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import TodoListAddForm from "./TodoListAddForm";
 import TodoListItems from "./TodoListItems";
 
 export default function TodoList() {
-    const items = [
-        { id: 1, content: "Learn ReactJS", done: true},
-        { id: 2, content: "Learn NodeJS", done: false}
-    ];
+  const itemsData = [
+    { id: 1, content: "Learn ReactJS", done: true },
+    { id: 2, content: "Learn NodeJS", done: false },
+  ];
+
+  const [items, setItems] = useState(itemsData);
+
   return (
     <div>
-        <TodoListAddForm />
-        <TodoListItems items={items}/>
+      <TodoListAddForm />
+      <TodoListItems items={items} />
     </div>
   );
 }
