@@ -3,10 +3,7 @@ import TodoListAddForm from "./TodoListAddForm";
 import TodoListItems from "./TodoListItems";
 
 export default function TodoList() {
-  const itemsData = [
-    { id: 1, content: "Learn ReactJS", done: true },
-    { id: 2, content: "Learn NodeJS", done: false },
-  ];
+  const itemsData = JSON.parse(localStorage.getItem("itemsData")) 
 
   const [items, setItems] = useState(itemsData);
 
